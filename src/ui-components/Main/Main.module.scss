@@ -1,0 +1,12 @@
+/* MAIN CONTENT */
+.homepage__content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 20px 100px;
+  position: relative;
+  z-index: 1;
+  @media (max-width: 767px) {
+    padding: 40px 15px;
+  }
+}

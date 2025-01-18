@@ -54,6 +54,7 @@ export interface TVShow {
     previousepisode?: { href: string; name: string };
     nextepisode?: { href: string; name: string };
   };
+  _embedded?: TVEmbedded;
 }
 
 export interface TVNetwork {
@@ -65,4 +66,89 @@ export interface TVNetwork {
     timezone: string;
   };
   officialSite: string | null;
+}
+
+export interface TVSchedule {
+  time: string;
+  days: string[];
+}
+
+export interface TVRating {
+  average: number | null;
+}
+
+export interface TVNetwork {
+  id: number;
+  name: string;
+  country: TVCountry;
+  officialSite: string | null;
+}
+
+export interface TVCountry {
+  name: string;
+  code: string;
+  timezone: string;
+}
+
+export interface TVWebChannel {
+  id: number;
+  name: string;
+}
+
+export interface TVExternals {
+  tvrage: number | null;
+  thetvdb: number | null;
+  imdb: string | null;
+}
+
+export interface TVImage {
+  medium: string;
+  original: string;
+}
+
+export interface TVLinks {
+  self: TVHref;
+  previousepisode?: TVHref;
+  nextepisode?: TVHref;
+}
+
+export interface TVHref {
+  href: string;
+  name?: string;
+}
+
+export interface TVEmbedded {
+  cast: TVCast[];
+}
+
+export interface TVCast {
+  person: TVPerson;
+  character: TVCharacter;
+  self: boolean;
+  voice: boolean;
+}
+
+export interface TVPerson {
+  id: number;
+  url: string;
+  name: string;
+  country: TVCountry | null;
+  birthday: string | null;
+  deathday: string | null;
+  gender: string;
+  image: TVImage | null;
+  updated: number;
+  _links: {
+    self: TVHref;
+  };
+}
+
+export interface TVCharacter {
+  id: number;
+  url: string;
+  name: string;
+  image: TVImage | null;
+  _links: {
+    self: TVHref;
+  };
 }

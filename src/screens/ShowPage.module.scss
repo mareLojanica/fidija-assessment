@@ -1,0 +1,64 @@
+.show-page {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+}
+
+.show-header {
+  display: flex;
+  gap: 20px;
+  background: #f0f0f0;
+  padding: 20px;
+}
+
+.show-header__image img {
+  width: 150px;
+  height: auto;
+  border-radius: 5px;
+}
+
+.show-header__content {
+  flex: 1;
+}
+
+.show-header__title {
+  font-size: 24px;
+  margin: 10px 0;
+}
+
+.show-header__summary {
+  font-size: 14px;
+  color: #666;
+}
+
+.show-info,
+.show-cast {
+  margin-top: 20px;
+}
+
+.show-info h2,
+.show-cast h2 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.show-cast__item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.show-cast__item img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: #ccc;
+}
+
+.show-cast__item p {
+  font-size: 14px;
+}
+
+.show-cast__item span {
+  color: #777;
+}

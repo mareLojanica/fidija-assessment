@@ -1,9 +1,10 @@
 import { lazy } from "react";
 import { Navigate, RouteObject } from "react-router-dom";
 
-import { Loader } from "./ui-components/SuspenseLoader/Loader";
 import HomepageLayout from "./Layout/HomeLayout";
 import BaseLayout from "./Layout/BaseLayout";
+import SingleShowLayout from "./Layout/ShowLayout";
+import { Loader } from "./ui-components/Loader";
 
 // Pages
 const HomePage = Loader(lazy(() => import("./screens/Homepage.screen")));
@@ -25,7 +26,11 @@ const routes: RouteObject[] = [
         element: <HomepageLayout />,
         children: [{ element: <HomePage />, path: "" }],
       },
-      { path: "/show/:showId", element: <ShowPage /> },
+      {
+        path: "/show/:showId",
+        element: <SingleShowLayout />,
+        children: [{ path: "", element: <ShowPage /> }],
+      },
     ],
   },
 ];

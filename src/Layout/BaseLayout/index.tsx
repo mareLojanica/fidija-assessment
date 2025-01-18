@@ -1,14 +1,15 @@
 import { Outlet } from "react-router-dom";
 import styles from "./BaseLayout.module.scss";
+import { FC } from "react";
+import Footer from "../../ui-components/Footer";
 
-const BaseLayout: React.FC = () => {
+const BaseLayout: FC = () => {
   return (
-    <>
+    <div className={styles["app-layout"]}>
       <div className={styles["homepage__gray-background"]}></div>
       <Outlet />
-      {/* FOOTER */}
-      <footer className={styles["homepage__footer"]}></footer>
-    </>
+      <Footer />
+    </div>
   );
 };
 

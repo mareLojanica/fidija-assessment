@@ -3,7 +3,10 @@ import useHomepage from "../hooks/useHomepageHook";
 import ReactPaginate from "react-paginate";
 import styles from "./Homepage.module.scss";
 import SuspenseLoader from "../ui-components/SuspenseLoader";
-import StarRating from "../ui-components/SuspenseLoader/StarRating";
+import { Link } from "react-router-dom";
+import StarRating from "../ui-components/StarRating";
+import Header from "../ui-components/Header";
+import Main from "../ui-components/Main";
 
 const Homepage: React.FC = () => {
   const {
@@ -17,21 +20,19 @@ const Homepage: React.FC = () => {
   } = useHomepage();
 
   return (
-    <div className={styles["homepage"]}>
-      {/* HEADER */}
-      <header className={styles["homepage__header"]}>
-        <div className={styles["homepage__header-content"]}>
-          <h1 className={styles["homepage__title"]}>TV Bland</h1>
-          <p className={styles["homepage__subtitle"]}>
-            TV Show and web series database. <br />
-            Create personalised schedules. Episode guide, cast, crew and
-            character information.
-          </p>
-        </div>
-      </header>
-
-      {/* MAIN CONTENT */}
-      <main className={styles["homepage__content"]}>
+    <>
+      <Header title="TV Blend">
+        {
+          <>
+            <p>TV Show and web series database. </p>
+            <p>
+              Create personalized schedules. Episode guide, cast, crew and
+              character information.
+            </p>
+          </>
+        }
+      </Header>
+      <Main>
         <section className={styles["homepage__shows"]}>
           <div className={styles["homepage__content-row"]}>
             <h2 className={styles["homepage__section-title"]}>
@@ -64,28 +65,34 @@ const Homepage: React.FC = () => {
             <>
               <div className={styles["homepage__grid"]}>
                 {data.map((show) => (
-                  <article key={show.id} className={styles["show-card"]}>
-                    <div className={styles["show-card__image"]}>
-                      {show.show.image?.medium ? (
-                        <img
-                          src={show.show.image.medium}
-                          alt={show.name}
-                          className={styles["show-card__img"]}
-                        />
-                      ) : (
-                        <div className={styles["show-card__no-image"]}>
-                          No Image Available
+                  <article key={show.id}>
+                    <Link to={`/show/${show.show.id}`}>
+                      <div className={styles["show-card"]}>
+                        <div className={styles["show-card__image"]}>
+                          {show.show.image?.medium ? (
+                            <img
+                              src={show.show.image.medium}
+                              alt={show.name}
+                              className={styles["show-card__img"]}
+                            />
+                          ) : (
+                            <div className={styles["show-card__no-image"]}>
+                              No Image Available
+                            </div>
+                          )}
                         </div>
-                      )}
-                    </div>
-                    <div className={styles["show-card__rating"]}>
-                      <StarRating
-                        rating={
-                          show.rating?.average ?? show.show.rating?.average
-                        }
-                      />
-                    </div>
-                    <p className={styles["show-card__title"]}>{show.name}</p>
+                        <div className={styles["show-card__rating"]}>
+                          <StarRating
+                            rating={
+                              show.rating?.average ?? show.show.rating?.average
+                            }
+                          />
+                        </div>
+                        <p className={styles["show-card__title"]}>
+                          {show.name}
+                        </p>
+                      </div>
+                    </Link>
                   </article>
                 ))}
               </div>
@@ -116,8 +123,8 @@ const Homepage: React.FC = () => {
             </div>
           )}
         </section>
-      </main>
-    </div>
+      </Main>
+    </>
   );
 };
 
