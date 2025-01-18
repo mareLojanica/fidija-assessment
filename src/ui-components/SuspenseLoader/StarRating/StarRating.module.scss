@@ -1,0 +1,12 @@
+.star-rating {
+  display: flex;
+  gap: 4px;
+}
+
+.star-filled {
+  fill: #ffd700; /* Gold */
+}
+
+.star-empty {
+  fill: #d3d3d3; /* Silver */
+}
