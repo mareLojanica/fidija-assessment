@@ -15,26 +15,18 @@ const ShowCastSection: React.FC<ShowCastSectionProps> = ({ cast }) => {
 
   return (
     <ShowSection title="Starring">
-      <article data-testid="show-cast-section">
+      <section data-testid="show-cast-section" aria-labelledby="cast-title">
+        <h2 id="cast-title" className={styles["cast-list__title"]}>
+          Starring
+        </h2>
         {paginatedData.length > 0 ? (
-          paginatedData.map((actor) => (
-            <React.Fragment key={actor.person.id}>
-              <CastListItem
-                actor={{
-                  person: {
-                    id: actor.person.id,
-                    name: actor.person.name,
-                    image: actor.person.image,
-                  },
-                  character: {
-                    name: actor.character.name,
-                  },
-                }}
-              />
-            </React.Fragment>
-          ))
+          <ul className={styles["cast-list"]}>
+            {paginatedData.map((actor) => (
+              <CastListItem key={actor.person.id} actor={actor} />
+            ))}
+          </ul>
         ) : (
-          <p className={styles["cast-list__empty"]}>
+          <p className={styles["cast-list__empty"]} role="alert">
             No cast information available.
           </p>
         )}
@@ -45,7 +37,7 @@ const ShowCastSection: React.FC<ShowCastSectionProps> = ({ cast }) => {
             onPageChange={goToPage}
           />
         )}
-      </article>
+      </section>
     </ShowSection>
   );
 };

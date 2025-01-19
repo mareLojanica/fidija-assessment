@@ -13,29 +13,40 @@ exports[`ShowCastSection Component matches snapshot 1`] = `
     <div
       class="show-info__content"
     >
-      <article
+      <section
+        aria-labelledby="cast-title"
         data-testid="show-cast-section"
       >
-        <div
-          data-testid="cast-list-item"
+        <h2
+          class="cast-list__title"
+          id="cast-title"
         >
-          <p>
-            Bryan Cranston
-          </p>
-          <p>
-            Walter White
-          </p>
-        </div>
-        <div
-          data-testid="cast-list-item"
+          Starring
+        </h2>
+        <ul
+          class="cast-list"
         >
-          <p>
-            Aaron Paul
-          </p>
-          <p>
-            Jesse Pinkman
-          </p>
-        </div>
+          <div
+            data-testid="cast-list-item"
+          >
+            <p>
+              Bryan Cranston
+            </p>
+            <p>
+              Walter White
+            </p>
+          </div>
+          <div
+            data-testid="cast-list-item"
+          >
+            <p>
+              Aaron Paul
+            </p>
+            <p>
+              Jesse Pinkman
+            </p>
+          </div>
+        </ul>
         <div
           data-testid="pagination"
         >
@@ -48,7 +59,7 @@ exports[`ShowCastSection Component matches snapshot 1`] = `
             Next
           </button>
         </div>
-      </article>
+      </section>
     </div>
   </div>
 </DocumentFragment>

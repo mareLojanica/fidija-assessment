@@ -5,7 +5,7 @@ import { ShowCardProps } from "../../types/ui-component.types";
 
 const ShowCard: React.FC<ShowCardProps> = ({ show }) => {
   return (
-    <article className={styles["show-card"]}>
+    <article className={styles["show-card"]} data-testid="show-card">
       <Link to={`/show/${show.id}`} className={styles["show-card__link"]}>
         <div className={styles["show-card-content__wrapper"]}>
           <div className={styles["show-card__image"]}>

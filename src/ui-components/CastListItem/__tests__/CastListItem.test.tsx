@@ -32,7 +32,7 @@ describe("CastListItem Component", () => {
 
     expect(img).toBeInTheDocument();
     expect(img).toHaveAttribute("src", "https://example.com/image.jpg");
-    expect(img).toHaveAttribute("alt", "Bryan Cranston");
+    expect(img).toHaveAttribute("alt", "Portrait of Bryan Cranston");
   });
 
   test("renders placeholder when actor image is missing", () => {

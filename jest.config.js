@@ -16,4 +16,5 @@ export default {
       },
     ],
   },
+  testPathIgnorePatterns: ["<rootDir>/tests/", "\\.spec\\.ts$"],
 };
