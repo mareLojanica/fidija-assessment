@@ -1,5 +1,5 @@
 import { ReactNode } from "react";
-import { TVCast, TVShow } from "./mazeTvApi.types";
+import { TVCast } from "./mazeTvApi.types";
 
 export interface DatePickerProps {
   selectedDate: string;
@@ -21,7 +21,10 @@ export interface PaginationProps {
   onPageChange: (selected: number) => void;
 }
 export interface ShowInfoSectionProps {
-  show: TVShow;
+  network?: string;
+  schedule: string[];
+  status: string;
+  genres: string[];
 }
 export interface ShowImageProps {
   image: { medium?: string } | null;

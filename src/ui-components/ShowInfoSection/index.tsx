@@ -1,34 +1,40 @@
-import React from "react";
+import React, { useMemo } from "react";
 import styles from "./ShowInfoSection.module.scss";
 import { ShowInfoSectionProps } from "../../types/ui-component.types";
 import ShowSection from "../ShowSection";
 
-const ShowInfoSection: React.FC<ShowInfoSectionProps> = ({ show }) => {
-  const infoData = [
-    { label: "Streamed on", value: show.network?.name ?? "Unknown" },
-    {
-      label: "Schedule",
-      value: show.schedule.days.length
-        ? show.schedule.days.join(", ")
-        : "Not Available",
-    },
-    { label: "Status", value: show.status },
-    {
-      label: "Genres",
-      value: show.genres.length ? show.genres.join(", ") : "N/A",
-    },
-  ];
+const ShowInfoSection: React.FC<ShowInfoSectionProps> = ({
+  network,
+  schedule,
+  status,
+  genres,
+}) => {
+  const infoData = useMemo(
+    () => [
+      { label: "Streamed on", value: network ?? "Unknown" },
+      {
+        label: "Schedule",
+        value: schedule.length ? schedule.join(", ") : "Not Available",
+      },
+      { label: "Status", value: status },
+      {
+        label: "Genres",
+        value: genres.length ? genres.join(", ") : "N/A",
+      },
+    ],
+    [network, schedule, status, genres]
+  );
 
   return (
     <ShowSection title="Show Info">
-      <article className={styles["content"]}>
-        {infoData.map((info, index) => (
-          <div key={index} className={styles["content__item"]}>
-            <strong className={styles["content__label"]}>{info.label}:</strong>
-            <span className={styles["content__value"]}>{info.value}</span>
-          </div>
+      <ol className={styles.content}>
+        {infoData.map(({ label, value }) => (
+          <li key={label} className={styles.content__item}>
+            <strong className={styles.content__label}>{label}:</strong>
+            <span className={styles.content__value}>{value}</span>
+          </li>
         ))}
-      </article>
+      </ol>
     </ShowSection>
   );
 };

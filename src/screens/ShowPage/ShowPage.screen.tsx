@@ -33,7 +33,12 @@ const ShowPage: React.FC = () => {
         )}
         {!isLoading && !error && show ? (
           <div className={styles["show__details"]}>
-            <ShowInfoSection show={show} />
+            <ShowInfoSection
+              network={show.network?.name}
+              genres={show.genres}
+              status={show.status}
+              schedule={show.schedule.days}
+            />
             <ShowCastSection cast={show?._embedded?.cast ?? []} />
           </div>
         ) : (
