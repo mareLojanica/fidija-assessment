@@ -3,7 +3,7 @@ import styles from "./BaseLayout.module.scss";
 import { FC } from "react";
 import Footer from "../../ui-components/Footer";
 
-const BaseLayout: FC = () => {
+const BaseLayout: FC = (): JSX.Element => {
   return (
     <div className={styles["app-layout"]}>
       <div className={styles["homepage__gray-background"]}></div>

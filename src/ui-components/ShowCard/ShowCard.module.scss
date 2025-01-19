@@ -1,0 +1,78 @@
+.show-card {
+  background: white;
+  border-radius: 5px;
+  padding: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  height: 100%;
+  width: 100%;
+  text-align: center;
+  @media (max-width: 767px) {
+    width: 100%;
+  }
+}
+
+/* IMAGE CONTAINER */
+.show-card__image {
+  width: 100%;
+  flex: 0 0 75%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: #eee;
+}
+
+/* ACTUAL IMAGE */
+.show-card__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Prevents distortion */
+}
+
+/* NO IMAGE FALLBACK */
+.show-card__no-image {
+  font-size: 14px;
+  color: #777;
+  text-align: center;
+  padding: 10px;
+}
+
+/* RATING */
+.show-card__rating {
+  flex: 0 0 10%;
+  font-size: 18px;
+  color: #ffcc00;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+/* TITLE */
+.show-card__title {
+  flex: 0 0 15%; /* Takes 15% of the card height */
+  font-size: 14px;
+  color: #333;
+  text-align: center;
+  word-wrap: break-word;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  align-items: center;
+  justify-content: center;
+  max-height: 3em; /* Adjust based on line height */
+  line-height: 1.5em; /* Ensures proper spacing */
+}
+/* SHOW CARD */
+.show-card__link {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+.show-card-content__wrapper {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}

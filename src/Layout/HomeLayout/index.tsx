@@ -1,7 +1,7 @@
 import { Outlet } from "react-router-dom";
 import { HomepageProvider } from "../../context/HomepageProvider";
 
-const HomepageLayout: React.FC = () => {
+const HomepageLayout: React.FC = (): JSX.Element => {
   return (
     <HomepageProvider>
       <Outlet />

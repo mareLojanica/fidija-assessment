@@ -7,8 +7,12 @@ import SingleShowLayout from "./Layout/ShowLayout";
 import { Loader } from "./ui-components/Loader";
 
 // Pages
-const HomePage = Loader(lazy(() => import("./screens/Homepage.screen")));
-const ShowPage = Loader(lazy(() => import("./screens/Show.screen")));
+const HomePage = Loader(
+  lazy(() => import("./screens/Homepage/Homepage.screen"))
+);
+const ShowPage = Loader(
+  lazy(() => import("./screens/ShowPage/ShowPage.screen"))
+);
 
 // Routes configuration
 

@@ -7,16 +7,16 @@ import {
 } from "react";
 import { TVEpisode } from "../types/mazeTvApi.types";
 import { mazeTvApi } from "../api/axiosInstance";
-import { usePagination } from "../hooks/usePagiantion";
+import { usePagination } from "../hooks/usePagination";
 import { HomepageContext } from "./HomepageContext";
 import { EPISODES_PER_PAGE } from "../constants";
 
 export const HomepageProvider: React.FC<PropsWithChildren> = ({ children }) => {
-  const [selectedDate, setSelectedDate] = useState(
+  const [selectedDate, setSelectedDate] = useState<string>(
     () => new Date().toISOString().split("T")[0]
   );
   const [data, setData] = useState<TVEpisode[]>([]);
-  const [isLoading, setIsLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState<boolean>(false);
   const [error, setError] = useState<string | null>(null);
 
   const fetchShowsByDate = useCallback(async () => {

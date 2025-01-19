@@ -1,11 +1,7 @@
-import React from "react";
 import styles from "./StarRating.module.scss";
+import { StarRatingProps } from "../../types/ui-component.types";
 
-interface StarRatingProps {
-  rating: number | null;
-}
-
-const StarRating: React.FC<StarRatingProps> = ({ rating }) => {
+const StarRating: React.FC<StarRatingProps> = ({ rating }): JSX.Element => {
   const maxStars = 5;
   const filledStars = rating ? Math.round(rating / 2) : 0;
   return (
