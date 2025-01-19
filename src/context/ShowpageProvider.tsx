@@ -19,7 +19,7 @@ export const ShowPageProvider: React.FC<PropsWithChildren> = ({ children }) => {
     try {
       setIsLoading(true);
       setError(null);
-      const { data } = await mazeTvApi.get(`/shows/${showId}`);
+      const { data } = await mazeTvApi.get(`/shows/${showId}?embed=cast`);
       setShow(data);
     } catch (err) {
       console.error(err);

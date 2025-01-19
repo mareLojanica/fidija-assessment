@@ -21,8 +21,9 @@ const Homepage: React.FC = () => {
 
   return (
     <>
-      <Header title="TV Blend">
-        {
+      <Header
+        title="TV Blend"
+        description={
           <>
             <p>TV Show and web series database. </p>
             <p>
@@ -31,9 +32,9 @@ const Homepage: React.FC = () => {
             </p>
           </>
         }
-      </Header>
+      />
       <Main>
-        <section className={styles["homepage__shows"]}>
+        <section>
           <div className={styles["homepage__content-row"]}>
             <h2 className={styles["homepage__section-title"]}>
               Last Added Shows

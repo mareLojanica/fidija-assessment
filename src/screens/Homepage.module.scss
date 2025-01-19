@@ -95,6 +95,7 @@
   margin: 0 auto;
   margin-bottom: 1.5rem;
   border-bottom: 2px solid #ddd;
+  padding-bottom: 10px;
 }
 
 /* SECTION TITLE */
@@ -207,7 +208,7 @@
   height: 100%;
   padding: 3px 8px;
 }
-.disabled {
+.pagination__disabled {
   pointer-events: none;
   opacity: 0.5;
   background: #f0f0f0;

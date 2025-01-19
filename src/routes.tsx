@@ -33,6 +33,10 @@ const routes: RouteObject[] = [
       },
     ],
   },
+  {
+    path: "*",
+    element: <Navigate to="/homepage" replace />,
+  },
 ];
 
 export default routes;
