@@ -5,8 +5,8 @@ import "@testing-library/jest-dom";
 import useHomepage from "../../../hooks/useHomepageHook";
 
 jest.mock("../../../hooks/useHomepageHook", () => ({
-  __esModule: true, // ✅ Ensures module resolution works correctly
-  default: jest.fn(), // ✅ Mock the default export correctly
+  __esModule: true,
+  default: jest.fn(),
 }));
 
 jest.mock("../../../ui-components/SuspenseLoader/", () =>

@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import styles from "./ShowCard.module.scss";
 import StarRating from "../StarRating";
 import { ShowCardProps } from "../../types/ui-component.types";
+import ResponsiveImage from "../ResponsiveImage";
 
 const ShowCard: React.FC<ShowCardProps> = ({ show }) => {
   return (
@@ -9,17 +10,19 @@ const ShowCard: React.FC<ShowCardProps> = ({ show }) => {
       <Link to={`/show/${show.id}`} className={styles["show-card__link"]}>
         <div className={styles["show-card-content__wrapper"]}>
           <div className={styles["show-card__image"]}>
-            {show.image ? (
-              <img
-                src={show.image}
-                alt={show.name}
-                className={styles["show-card__img"]}
-              />
-            ) : (
-              <div className={styles["show-card__no-image"]}>
-                No Image Available
-              </div>
-            )}
+            <ResponsiveImage
+              alt={show.name}
+              src={show.image || ""}
+              className={styles["show-card__img"]}
+              fallbackComponent={
+                <div
+                  className={styles["show-card__no-image"]}
+                  data-testid="fallback-image"
+                >
+                  No Image Available
+                </div>
+              }
+            />
           </div>
           <div className={styles["show-card__rating"]}>
             <StarRating rating={show.rating} />

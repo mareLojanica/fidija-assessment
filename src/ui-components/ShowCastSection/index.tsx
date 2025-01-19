@@ -16,9 +16,6 @@ const ShowCastSection: React.FC<ShowCastSectionProps> = ({ cast }) => {
   return (
     <ShowSection title="Starring">
       <section data-testid="show-cast-section" aria-labelledby="cast-title">
-        <h2 id="cast-title" className={styles["cast-list__title"]}>
-          Starring
-        </h2>
         {paginatedData.length > 0 ? (
           <ul className={styles["cast-list"]}>
             {paginatedData.map((actor) => (

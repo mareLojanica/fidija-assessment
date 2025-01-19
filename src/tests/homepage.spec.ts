@@ -48,7 +48,7 @@ test.describe("DatePicker updates API and re-renders data", () => {
 });
 
 test("Click on a random show card and verify redirection", async ({ page }) => {
-  await page.goto("/homepage"); // Ensure the correct route
+  await page.goto("/homepage");
 
   await expect(page.locator('[data-testid="show-card"]')).toHaveCount(
     EPISODES_PER_PAGE,

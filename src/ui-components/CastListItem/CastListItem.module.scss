@@ -1,18 +1,25 @@
 .cast-list-item {
   display: flex;
   align-items: center;
-  gap: 15px;
   padding: 15px 0;
   border-bottom: 1px solid #bfbfbf;
   height: 80px;
-
+  &__article {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    gap: 50px;
+  }
   @media (max-width: 768px) {
     border-bottom: none;
+  }
+  &__wrapper {
+    flex: 1;
   }
   &__img-wrapper {
     width: 50px;
     height: 50px;
-    border-radius: 50%;
+    border-radius: 70%;
     background-color: #bfbfbf;
     display: flex;
     align-items: center;
@@ -22,20 +29,30 @@
     height: 100%;
     width: 100%;
     border-radius: 50%;
-    object-fit: cover;
+    object-fit: contain;
   }
   &__details {
     display: flex;
-    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+
+    flex: 9;
+    @media (max-width: 768px) {
+      align-items: start;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
   }
 
   &__name {
     font-weight: bold;
+    flex: 2;
   }
 
   &__character {
     font-size: 12px;
     color: gray;
+    flex: 1;
   }
 
   &__empty {

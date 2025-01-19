@@ -1,4 +1,3 @@
-/* PAGINATION CONTAINER */
 .pagination {
   display: flex;
   justify-content: center;
@@ -7,7 +6,6 @@
   margin-top: 20px;
 }
 
-/* INDIVIDUAL PAGE ITEM */
 .pagination__page {
   padding: 8px 12px;
   background: white;
@@ -21,14 +19,12 @@
   }
 }
 
-/* ACTIVE PAGE */
 .pagination__active {
   background: #007bff;
   color: white;
   font-weight: bold;
 }
 
-/* PREVIOUS & NEXT BUTTON */
 .pagination__prev,
 .pagination__next {
   background: white;
@@ -42,7 +38,6 @@
   }
 }
 
-/* BREAK (for ...) */
 .pagination__break {
   padding: 8px 12px;
   color: #777;

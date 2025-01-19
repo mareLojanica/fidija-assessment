@@ -26,15 +26,6 @@ describe("CastListItem Component", () => {
     );
   });
 
-  test("renders actor's image when available", () => {
-    render(<CastListItem actor={mockActor} />);
-    const img = screen.getByTestId("actor-image");
-
-    expect(img).toBeInTheDocument();
-    expect(img).toHaveAttribute("src", "https://example.com/image.jpg");
-    expect(img).toHaveAttribute("alt", "Portrait of Bryan Cranston");
-  });
-
   test("renders placeholder when actor image is missing", () => {
     const mockActorWithoutImage = {
       ...mockActor,

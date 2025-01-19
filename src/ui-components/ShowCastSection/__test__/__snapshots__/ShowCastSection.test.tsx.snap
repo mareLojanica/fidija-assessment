@@ -17,12 +17,6 @@ exports[`ShowCastSection Component matches snapshot 1`] = `
         aria-labelledby="cast-title"
         data-testid="show-cast-section"
       >
-        <h2
-          class="cast-list__title"
-          id="cast-title"
-        >
-          Starring
-        </h2>
         <ul
           class="cast-list"
         >

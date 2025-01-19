@@ -58,3 +58,13 @@ export interface CastListItemProps {
     };
   };
 }
+export interface ResponsiveImageProps {
+  alt: string;
+  src: string;
+  webpSrc?: string;
+  avifSrc?: string;
+  smallSrc?: string;
+  mediumSrc?: string;
+  className?: string;
+  fallbackComponent: ReactNode;
+}
