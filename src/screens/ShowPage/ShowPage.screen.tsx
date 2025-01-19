@@ -29,7 +29,9 @@ const ShowPage: React.FC = () => {
       <Main>
         {isLoading && <SuspenseLoader />}
         {error && (
-          <p className={styles["placeholder"]}>Ooops something went wrong!</p>
+          <p className={styles["placeholder"]} data-testid="error-message">
+            Ooops something went wrong!
+          </p>
         )}
         {!isLoading && !error && show ? (
           <div className={styles["show__details"]}>
@@ -43,7 +45,11 @@ const ShowPage: React.FC = () => {
           </div>
         ) : (
           !isLoading &&
-          !error && <p className={styles["placeholder"]}>Show not found.</p>
+          !error && (
+            <p className={styles["placeholder"]} data-testid="show-not-found">
+              Show not found.
+            </p>
+          )
         )}
       </Main>
     </>

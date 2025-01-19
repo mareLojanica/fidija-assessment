@@ -15,41 +15,36 @@ const ShowCastSection: React.FC<ShowCastSectionProps> = ({ cast }) => {
 
   return (
     <ShowSection title="Starring">
-      <article>
-        <div className={styles["cast-list"]}>
-          <h2 className={styles["cast-list__title"]}>Starring</h2>
-          <div className={styles["cast-list__content"]}>
-            {paginatedData.length > 0 ? (
-              paginatedData.map((actor) => (
-                <React.Fragment key={actor.person.id}>
-                  <CastListItem
-                    actor={{
-                      person: {
-                        id: actor.person.id,
-                        name: actor.person.name,
-                        image: actor.person.image,
-                      },
-                      character: {
-                        name: actor.character.name,
-                      },
-                    }}
-                  />
-                </React.Fragment>
-              ))
-            ) : (
-              <p className={styles["cast-list__empty"]}>
-                No cast information available.
-              </p>
-            )}
-            {pageCount > 1 && (
-              <Pagination
-                pageCount={pageCount}
-                currentPage={currentPage}
-                onPageChange={goToPage}
+      <article data-testid="show-cast-section">
+        {paginatedData.length > 0 ? (
+          paginatedData.map((actor) => (
+            <React.Fragment key={actor.person.id}>
+              <CastListItem
+                actor={{
+                  person: {
+                    id: actor.person.id,
+                    name: actor.person.name,
+                    image: actor.person.image,
+                  },
+                  character: {
+                    name: actor.character.name,
+                  },
+                }}
               />
-            )}
-          </div>
-        </div>
+            </React.Fragment>
+          ))
+        ) : (
+          <p className={styles["cast-list__empty"]}>
+            No cast information available.
+          </p>
+        )}
+        {pageCount > 1 && (
+          <Pagination
+            pageCount={pageCount}
+            currentPage={currentPage}
+            onPageChange={goToPage}
+          />
+        )}
       </article>
     </ShowSection>
   );

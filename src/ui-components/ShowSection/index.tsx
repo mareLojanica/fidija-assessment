@@ -1,4 +1,4 @@
-import { FC } from "react";
+import React, { FC } from "react";
 import styles from "./ShowSection.module.scss";
 import { ShowSectionProps } from "../../types/ui-component.types";
 

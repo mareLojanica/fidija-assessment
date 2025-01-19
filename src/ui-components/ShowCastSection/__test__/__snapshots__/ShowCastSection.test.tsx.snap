@@ -1,0 +1,55 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ShowCastSection Component matches snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="show-info"
+  >
+    <h2
+      class="show-info__title"
+    >
+      Starring
+    </h2>
+    <div
+      class="show-info__content"
+    >
+      <article
+        data-testid="show-cast-section"
+      >
+        <div
+          data-testid="cast-list-item"
+        >
+          <p>
+            Bryan Cranston
+          </p>
+          <p>
+            Walter White
+          </p>
+        </div>
+        <div
+          data-testid="cast-list-item"
+        >
+          <p>
+            Aaron Paul
+          </p>
+          <p>
+            Jesse Pinkman
+          </p>
+        </div>
+        <div
+          data-testid="pagination"
+        >
+          <button
+            disabled=""
+          >
+            Prev
+          </button>
+          <button>
+            Next
+          </button>
+        </div>
+      </article>
+    </div>
+  </div>
+</DocumentFragment>
+`;

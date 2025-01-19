@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ShowPage Component matches snapshot 1`] = `
+<DocumentFragment>
+  <header
+    data-testid="header"
+  >
+    TV Blend
+  </header>
+  <main
+    data-testid="main"
+  >
+    <p
+      class="placeholder"
+      data-testid="show-not-found"
+    >
+      Show not found.
+    </p>
+  </main>
+</DocumentFragment>
+`;

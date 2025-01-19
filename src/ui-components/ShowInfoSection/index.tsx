@@ -27,7 +27,7 @@ const ShowInfoSection: React.FC<ShowInfoSectionProps> = ({
 
   return (
     <ShowSection title="Show Info">
-      <ol className={styles.content}>
+      <ol className={styles.content} data-testid="show-info-section">
         {infoData.map(({ label, value }) => (
           <li key={label} className={styles.content__item}>
             <strong className={styles.content__label}>{label}:</strong>

@@ -1,0 +1,80 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ShowInfoSection Component matches snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="show-info"
+  >
+    <h2
+      class="show-info__title"
+    >
+      Show Info
+    </h2>
+    <div
+      class="show-info__content"
+    >
+      <ol
+        class="content"
+        data-testid="show-info-section"
+      >
+        <li
+          class="content__item"
+        >
+          <strong
+            class="content__label"
+          >
+            Streamed on:
+          </strong>
+          <span
+            class="content__value"
+          >
+            RTS
+          </span>
+        </li>
+        <li
+          class="content__item"
+        >
+          <strong
+            class="content__label"
+          >
+            Schedule:
+          </strong>
+          <span
+            class="content__value"
+          >
+            Ponedeljak, Utorak, Sreda, Cetvrtak, Petak
+          </span>
+        </li>
+        <li
+          class="content__item"
+        >
+          <strong
+            class="content__label"
+          >
+            Status:
+          </strong>
+          <span
+            class="content__value"
+          >
+            Daje se
+          </span>
+        </li>
+        <li
+          class="content__item"
+        >
+          <strong
+            class="content__label"
+          >
+            Genres:
+          </strong>
+          <span
+            class="content__value"
+          >
+            Najbolja Serija Ikada
+          </span>
+        </li>
+      </ol>
+    </div>
+  </div>
+</DocumentFragment>
+`;

@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header Component matches snapshot 1`] = `
+<DocumentFragment>
+  <header
+    class="homepage__header"
+  >
+    <div
+      class="homepage__header-content"
+    >
+      <h1
+        class="homepage__title"
+      >
+        TV Blend
+      </h1>
+      <div
+        class="homepage__subtitle"
+      >
+        <p>
+          TV Show and web series database.
+        </p>
+      </div>
+    </div>
+    <div
+      data-testid="show-info"
+    >
+      Show Details Here
+    </div>
+  </header>
+</DocumentFragment>
+`;

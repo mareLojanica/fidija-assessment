@@ -11,7 +11,7 @@ const ShowDetails: React.FC<ShowDetailsProps> = ({
   summary,
 }) => {
   return (
-    <div className={styles["show-details"]}>
+    <div className={styles["show-details"]} data-testid="show-details">
       <ShowImage image={image} name={name} />
       <div className={styles["show-details__content"]}>
         <div className={styles["show-details__rating"]}>

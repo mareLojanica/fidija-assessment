@@ -1,0 +1,45 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Homepage Component matches snapshot 1`] = `
+<DocumentFragment>
+  <header
+    data-testid="header"
+  >
+    TV Blend
+  </header>
+  <main
+    data-testid="main"
+  >
+    <section
+      class="homepage"
+    >
+      <div
+        class="homepage__header"
+      >
+        <h2
+          class="homepage__title"
+        >
+          Last Added Shows
+        </h2>
+        <div
+          data-testid="date-picker"
+        >
+          <p>
+            Selected Date: 2024-01-01
+          </p>
+          <button>
+            Change Date
+          </button>
+        </div>
+      </div>
+      <div
+        class="homepage__empty"
+      >
+        <p>
+          No shows available
+        </p>
+      </div>
+    </section>
+  </main>
+</DocumentFragment>
+`;

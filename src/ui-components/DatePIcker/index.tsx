@@ -1,3 +1,4 @@
+import React from "react";
 import { DatePickerProps } from "../../types/ui-component.types";
 import styles from "./DatePicker.module.scss";
 
@@ -16,6 +17,7 @@ const DatePicker: React.FC<DatePickerProps> = ({
         value={selectedDate}
         onChange={(event) => onDateChange(event.target.value)}
         className={styles["datepicker-input"]}
+        data-testid="date-input"
       />
     </div>
   );

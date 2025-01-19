@@ -1,0 +1,51 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ShowDetails Component matches snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="show-details"
+    data-testid="show-details"
+  >
+    <div
+      data-testid="show-image"
+    >
+      <img
+        alt="Breaking Bad"
+        src="https://example.com/show.jpg"
+      />
+    </div>
+    <div
+      class="show-details__content"
+    >
+      <div
+        class="show-details__rating"
+      >
+        <div
+          data-testid="star-rating"
+        >
+          Rating: 9 / 10
+        </div>
+        <span>
+          4.5 / 5
+        </span>
+      </div>
+      <div
+        class="show-details__title__wrapper"
+      >
+        <h1
+          class="show-details__title"
+        >
+          Breaking Bad
+        </h1>
+        <p
+          class="show-details__summary"
+        />
+        <p>
+          A high school chemistry teacher turned meth kingpin.
+        </p>
+        <p />
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
