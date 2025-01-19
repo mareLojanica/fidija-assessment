@@ -12,7 +12,7 @@ const ResponsiveImage: React.FC<ResponsiveImageProps> = ({
   fallbackComponent,
 }) => {
   return src ? (
-    <picture>
+    <picture className={className}>
       {avifSrc && <source srcSet={avifSrc} type="image/avif" />}
       {webpSrc && <source srcSet={webpSrc} type="image/webp" />}
       {smallSrc && <source media="(max-width: 600px)" srcSet={smallSrc} />}
