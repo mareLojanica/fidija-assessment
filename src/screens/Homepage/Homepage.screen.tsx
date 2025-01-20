@@ -56,8 +56,7 @@ const Homepage: React.FC = () => {
                     show={{
                       id: show.show.id,
                       name: show.name,
-                      image:
-                        show.image?.medium || show.show.image?.medium || "",
+                      image: show.image?.medium || "",
                       rating: show.rating.average ?? 0,
                     }}
                   />
