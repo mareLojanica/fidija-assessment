@@ -14,6 +14,12 @@ yarn install
 yarn dev
 ```
 
+## Before running test make sure that you have installed PlayWright
+
+```sh
+ yarn playwright install
+```
+
 ## Run Tests
 
 ### Jest (Unit Tests)

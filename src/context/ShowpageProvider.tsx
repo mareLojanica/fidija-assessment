@@ -1,41 +1,15 @@
-import React, {
-  useState,
-  useCallback,
-  PropsWithChildren,
-  useEffect,
-} from "react";
-import { ShowPageContext } from "./ShowPageContext";
-import { TVShow } from "../types/mazeTvApi.types";
-import { mazeTvApi } from "../api/axiosInstance";
-import { useParams } from "react-router-dom";
+import React, { PropsWithChildren } from "react"
+import { ShowPageContext } from "./ShowPageContext"
+import { useParams } from "react-router-dom"
+import { useShow } from "../hooks/useShow"
 
 export const ShowPageProvider: React.FC<PropsWithChildren> = ({ children }) => {
-  const { showId } = useParams<string>();
-  const [show, setShow] = useState<TVShow | null>(null);
-  const [isLoading, setIsLoading] = useState(false);
-  const [error, setError] = useState<string | null>(null);
+	const { showId } = useParams<string>()
+	const { data: show, isLoading, error } = useShow(showId ?? "")
 
-  const fetchShow = useCallback(async () => {
-    try {
-      setIsLoading(true);
-      setError(null);
-      const { data } = await mazeTvApi.get(`/shows/${showId}?embed=cast`);
-      setShow(data);
-    } catch (err) {
-      console.error(err);
-      setError("Failed to load show data.");
-    } finally {
-      setIsLoading(false);
-    }
-  }, [showId]);
-
-  useEffect(() => {
-    fetchShow();
-  }, [showId, fetchShow]);
-
-  return (
-    <ShowPageContext.Provider value={{ show, isLoading, error, fetchShow }}>
-      {children}
-    </ShowPageContext.Provider>
-  );
-};
+	return (
+		<ShowPageContext.Provider value={{ show, isLoading, error }}>
+			{children}
+		</ShowPageContext.Provider>
+	)
+}

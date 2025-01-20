@@ -1,18 +1,10 @@
-import { createContext } from "react";
-import { TVShow } from "../types/mazeTvApi.types";
-
-interface ShowPageState {
-  show: TVShow | null;
-  isLoading: boolean;
-  error: string | null;
-  fetchShow: (showId: string) => void;
-}
+import { createContext } from "react"
+import { ShowPageState } from "../types/poviders.types"
 
 const defaultState: ShowPageState = {
-  show: null,
-  isLoading: false,
-  error: null,
-  fetchShow: () => {},
-};
+	show: undefined,
+	isLoading: false,
+	error: null,
+}
 
-export const ShowPageContext = createContext<ShowPageState>(defaultState);
+export const ShowPageContext = createContext<ShowPageState>(defaultState)

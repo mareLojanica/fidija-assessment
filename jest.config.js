@@ -1,20 +1,12 @@
 export default {
-  testEnvironment: "jsdom",
-  setupFilesAfterEnv: ["<rootDir>/jest.setup.js"],
-  moduleNameMapper: {
-    "\\.(css|scss|sass)$": "identity-obj-proxy",
-  },
-  transform: {
-    "^.+\\.(js|jsx|ts|tsx)$": [
-      "babel-jest",
-      {
-        presets: [
-          "@babel/preset-env",
-          "@babel/preset-react",
-          "@babel/preset-typescript",
-        ],
-      },
-    ],
-  },
-  testPathIgnorePatterns: ["<rootDir>/tests/", "\\.spec\\.ts$"],
-};
+	transform: {
+		"^.+\\.(t|j)sx?$": ["@swc/jest"],
+	},
+	testEnvironment: "jsdom",
+	moduleNameMapper: {
+		"^(\\.{1,2}/.*)\\.js$": "$1",
+		"\\.(css|scss|sass)$": "identity-obj-proxy",
+	},
+	extensionsToTreatAsEsm: [".ts", ".tsx"],
+	testPathIgnorePatterns: [".spec.ts$"],
+}
